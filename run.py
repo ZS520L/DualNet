@@ -26,6 +26,10 @@ if __name__ == '__main__':
     parser.add_argument('--model', type=str, required=True, default='Autoformer',
                         help='model name, options: [Autoformer, Transformer, TimesNet]')
 
+    # for DualNet
+    parser.add_argument('--expansion_factor', type=int, default=8,
+                    help='expansion factor for main network hidden dimension')
+
     # data loader
     parser.add_argument('--data', type=str, required=True, default='ETTm1', help='dataset type')
     parser.add_argument('--root_path', type=str, default='./data/ETT/', help='root path of the data file')
