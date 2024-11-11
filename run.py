@@ -27,8 +27,14 @@ if __name__ == '__main__':
                         help='model name, options: [Autoformer, Transformer, TimesNet]')
 
     # for DualNet
-    parser.add_argument('--expansion_factor', type=int, default=8,
-                    help='expansion factor for main network hidden dimension')
+    parser.add_argument('--expansion_factor', type=int, default=8,  
+                help='Expansion multiplier for the hidden dimension in the main network')  
+    parser.add_argument('--main_drop', type=float, default=0.5,  
+                help='Dropout rate for the main network path')  
+    parser.add_argument('--comp_drop', type=float, default=0.2,  
+                help='Dropout rate for the complementary network path')  
+    parser.add_argument('--num_groups', type=int, default=1,  
+                help='Number of groups for group-wise feature processing')
 
     # data loader
     parser.add_argument('--data', type=str, required=True, default='ETTm1', help='dataset type')
